@@ -37,3 +37,24 @@
     color: #000;
     padding: 0.2em 0;
 }
+
+
+
+[ui-view].ng-enter {
+  animation: fadeInDown 0.8s;
+  -webkit-animation: fadeInDown 0.8s;
+  -moz-animation: fadeInDown 0.8s;
+  -ms-animation: fadeInDown 0.8s;
+}
+
+.nested-view.ng-enter-active {  }
+.nested-view.ng-leave-active { position: static; }
+
+[ui-view].ng-leave {
+  animation: fadeOutDown 0.8s;
+  -webkit-animation: fadeOutDown 0.8s;
+  -moz-animation: fadeOutDown 0.8s;
+  -ms-animation: fadeOutDown 0.8s;
+  opacity: 0.7;
+  }
+

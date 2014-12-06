@@ -4,7 +4,8 @@ angular.module('myDiaryApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
+  'ngAnimate'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
@@ -41,6 +42,7 @@ angular.module('myDiaryApp', [
   })
 
   .run(function ($rootScope, $location, Auth) {
+  var editor = new MediumEditor('.editable');
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {

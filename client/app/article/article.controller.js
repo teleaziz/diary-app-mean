@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myDiaryApp')
-  .controller('ArticleCtrl', function ($scope, articles) {
+  .controller('ArticleCtrl', function ($scope,  articles) {
     $scope.articles = [] ;
   
   articles.getAll().success(function(response) {
@@ -20,6 +20,8 @@ angular.module('myDiaryApp')
     console.log($scope.newArticle.title);
     articles.saveOne($scope.newArticle).success(function(response){
       console.log(response);
+      $scope.newArticle = {};
+      $scope.$parent.articles.push(response);
     });
   
   };

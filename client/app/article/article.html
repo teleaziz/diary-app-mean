@@ -1,16 +1,18 @@
 <div class="col-md-12">
-This is the article view.
-<ul>
-  <li ng-repeat="article in articles">
-    <a ui-sref="article.show({id: article._id})">{{article.title}}</a>
-  </li>
-  
-</ul>
+  This is the article view.
+  <ul>
+    <li ng-repeat="article in articles">
+      <div class="editable">
+        <a ui-sref="article.show({id: article._id})">{{article.title}}</a>
+      </div>
+    </li>
+
+  </ul>
 
 
-<a ui-sref="article.save()">Create new</a>
+  <a ui-sref="article.save()">Create new</a>
 
 
-<div ui-view=""  ></div>
+  <div class="nested-view" ui-view=""  ></div>
 
 </div>
